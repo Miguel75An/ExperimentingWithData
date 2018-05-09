@@ -32,7 +32,7 @@ if __name__ == '__main__':
         StructField("cool", StringType(), True)])
 
     # Create a dataframe using the RDD and the previously declared schema
-    reviews_df = spark.createDataFrame(reviews_rdd_new, schema)
+    reviews_df = sqlContext.createDataFrame(reviews_rdd_new, schema)
     reviews_df.printSchema()
 
     # Cast all columns to the appropriate datatype
