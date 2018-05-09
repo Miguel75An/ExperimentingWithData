@@ -14,7 +14,7 @@ def extractRow(index, lines):
 if __name__ == '__main__':
     sc = SparkContext()
 
-    reviews_rdd = sc.textFile("yelp_review.csv", use_unicode=False)
+    reviews_rdd = sc.textFile("/user/ipalong00/yelp_reviews/yelp_review.csv", use_unicode=False)
     reviews_rdd_new = reviews_rdd.mapPartitionsWithIndex(extractRow).cache()
 
     # Create the schema necessary for the creation of a DataFrame
